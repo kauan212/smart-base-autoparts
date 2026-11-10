@@ -6,6 +6,7 @@ const produtoRotas = require('./rotas/produtoRotas');
 const usuarioRotas = require('./rotas/usuarioRotas');
 const pedidoRotas = require('./rotas/pedidoRotas');
 const adminRotas = require('./rotas/adminRotas');
+const artigoRotas = require('./rotas/artigoRotas');
 
 const app = express();
 const PORTA = 3000;
@@ -37,12 +38,16 @@ app.use('/api/usuarios', usuarioRotas);
 app.use('/api/pedidos', pedidoRotas);
 app.use('/api/admin', adminRotas);
 
+// Rotas do Smart-Base
+app.use('/api/artigos', artigoRotas);
+
 // Inicialização
 app.listen(PORTA, () => {
     console.log('====================================');
-    console.log('       AUTOPARTS - SERVIDOR');
+    console.log('       SMART-BASE AUTOPARTS');
     console.log('====================================');
     console.log(`Servidor rodando na porta ${PORTA}`);
     console.log(`Loja: http://localhost:${PORTA}`);
+    console.log(`API de artigos: http://localhost:${PORTA}/api/artigos`);
     console.log('====================================');
 });
