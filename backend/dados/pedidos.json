@@ -1,0 +1,133 @@
+[
+    {
+        "id": "abc2ce8a-6aab-458c-b92f-4a1e1236fb8c",
+        "usuarioId": "a45b7319-509e-498e-a638-39982f3be7c7",
+        "itens": [
+            {
+                "produtoId": 2,
+                "nome": "Pastilha de Freio Dianteira",
+                "quantidade": 2,
+                "precoUnitario": 119.9,
+                "subtotal": 239.8
+            },
+            {
+                "produtoId": 7,
+                "nome": "Filtro de Ar",
+                "quantidade": 2,
+                "precoUnitario": 39.9,
+                "subtotal": 79.8
+            },
+            {
+                "produtoId": 4,
+                "nome": "Vela de Ignição",
+                "quantidade": 1,
+                "precoUnitario": 24.9,
+                "subtotal": 24.9
+            }
+        ],
+        "dadosEntrega": {
+            "cep": "88526163",
+            "endereco": "Douglas Zapeline",
+            "numero": "479",
+            "bairro": "Popular",
+            "cidade": "Lages"
+        },
+        "formaPagamento": "Pix",
+        "valorTotal": 344.5,
+        "status": "Pagamento aprovado",
+        "criadoEm": "2026-11-09T02:43:58.178Z"
+    },
+    {
+        "id": "ab186d30-a73c-4fcc-951f-250b0b3cfc32",
+        "usuarioId": "5fdff4e9-999f-4d47-9297-e96d2e56d004",
+        "itens": [
+            {
+                "produtoId": 2,
+                "nome": "Pastilha de Freio Dianteira",
+                "quantidade": 1,
+                "precoUnitario": 119.9,
+                "subtotal": 119.9
+            },
+            {
+                "produtoId": 1,
+                "nome": "Filtro de Óleo",
+                "quantidade": 1,
+                "precoUnitario": 29.9,
+                "subtotal": 29.9
+            }
+        ],
+        "dadosEntrega": {
+            "cep": "86785468",
+            "endereco": "Castelo Branco",
+            "numero": "654",
+            "bairro": ".",
+            "cidade": "Lages"
+        },
+        "formaPagamento": "Cartão de crédito",
+        "valorTotal": 149.8,
+        "status": "Aguardando pagamento",
+        "criadoEm": "2026-11-09T22:19:35.417Z"
+    },
+    {
+        "id": "8875d046-89bd-4dbb-9c08-5a7ef0099af4",
+        "usuarioId": "4d038a57-7871-4ab0-9e54-ed52859cf74d",
+        "itens": [
+            {
+                "produtoId": 1,
+                "nome": "Filtro de Óleo",
+                "quantidade": 2,
+                "precoUnitario": 29.9,
+                "subtotal": 59.8
+            },
+            {
+                "produtoId": 2,
+                "nome": "Pastilha de Freio Dianteira",
+                "quantidade": 1,
+                "precoUnitario": 119.9,
+                "subtotal": 119.9
+            },
+            {
+                "produtoId": 3,
+                "nome": "Amortecedor Dianteiro",
+                "quantidade": 2,
+                "precoUnitario": 289.9,
+                "subtotal": 579.8
+            }
+        ],
+        "dadosEntrega": {
+            "cep": "78545548",
+            "endereco": "Av das Torres",
+            "numero": "458",
+            "bairro": "Guaruja",
+            "cidade": "Lages"
+        },
+        "formaPagamento": "Boleto",
+        "valorTotal": 759.5,
+        "status": "Aguardando pagamento",
+        "criadoEm": "2026-11-09T23:20:44.856Z"
+    },
+    {
+        "id": "adbb77f2-927b-4887-83bd-f4e8ec37587b",
+        "usuarioId": "4d038a57-7871-4ab0-9e54-ed52859cf74d",
+        "itens": [
+            {
+                "produtoId": 2,
+                "nome": "Pastilha de Freio Dianteira",
+                "quantidade": 1,
+                "precoUnitario": 119.9,
+                "subtotal": 119.9
+            }
+        ],
+        "dadosEntrega": {
+            "cep": "88658625",
+            "endereco": "Av das torres",
+            "numero": "165",
+            "bairro": "Guaruja",
+            "cidade": "Lages"
+        },
+        "formaPagamento": "Pix",
+        "valorTotal": 119.9,
+        "status": "Aguardando pagamento",
+        "criadoEm": "2026-11-09T23:43:04.927Z"
+    }
+]

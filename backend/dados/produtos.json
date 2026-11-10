@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "nome": "Filtro de Óleo",
+        "categoria": "Motor",
+        "marca": "Tecfil",
+        "modelo": "PSL55",
+        "compatibilidade": "Volkswagen Gol, Voyage e Saveiro",
+        "preco": 29.9,
+        "estoque": 47,
+        "imagem": "",
+        "descricao": "Filtro de óleo para motores automotivos."
+    },
+    {
+        "id": 2,
+        "nome": "Pastilha de Freio Dianteira",
+        "categoria": "Freios",
+        "marca": "Bosch",
+        "modelo": "BD1234",
+        "compatibilidade": "Volkswagen Gol G5 e G6",
+        "preco": 119.9,
+        "estoque": 20,
+        "imagem": "",
+        "descricao": "Pastilha de freio com excelente desempenho e durabilidade."
+    },
+    {
+        "id": 3,
+        "nome": "Amortecedor Dianteiro",
+        "categoria": "Suspensão",
+        "marca": "Cofap",
+        "modelo": "GP30500",
+        "compatibilidade": "Chevrolet Onix",
+        "preco": 289.9,
+        "estoque": 10,
+        "imagem": "",
+        "descricao": "Amortecedor desenvolvido para proporcionar estabilidade e conforto."
+    },
+    {
+        "id": 4,
+        "nome": "Vela de Ignição",
+        "categoria": "Motor",
+        "marca": "NGK",
+        "modelo": "BKR6E",
+        "compatibilidade": "Volkswagen Gol e Fox",
+        "preco": 24.9,
+        "estoque": 79,
+        "imagem": "",
+        "descricao": "Vela de ignição para sistemas de combustão automotivos."
+    },
+    {
+        "id": 5,
+        "nome": "Bateria Automotiva 60Ah",
+        "categoria": "Elétrica",
+        "marca": "Moura",
+        "modelo": "M60GD",
+        "compatibilidade": "Veículos com especificação de bateria 60Ah",
+        "preco": 489.9,
+        "estoque": 15,
+        "imagem": "",
+        "descricao": "Bateria automotiva de 60 amperes."
+    },
+    {
+        "id": 6,
+        "nome": "Disco de Freio Dianteiro",
+        "categoria": "Freios",
+        "marca": "Fremax",
+        "modelo": "BD123",
+        "compatibilidade": "Volkswagen Gol",
+        "preco": 179.9,
+        "estoque": 20,
+        "imagem": "",
+        "descricao": "Disco de freio dianteiro."
+    },
+    {
+        "id": 7,
+        "nome": "Filtro de Ar",
+        "categoria": "Motor",
+        "marca": "Mann",
+        "modelo": "C30005",
+        "compatibilidade": "Fiat Palio e Siena",
+        "preco": 39.9,
+        "estoque": 33,
+        "imagem": "",
+        "descricao": "Filtro de ar para sistema de admissão."
+    },
+    {
+        "id": 8,
+        "nome": "Alternador Automotivo",
+        "categoria": "Elétrica",
+        "marca": "Bosch",
+        "modelo": "ALT001",
+        "compatibilidade": "Chevrolet Celta",
+        "preco": 599.9,
+        "estoque": 8,
+        "imagem": "",
+        "descricao": "Alternador para sistema elétrico automotivo."
+    }
+]

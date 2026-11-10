@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoParts | Peças Automotivas</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <div class="container topo">
+
+            <a href="index.html" class="logo">
+                <span class="logo-destaque">AUTO</span>PARTS
+            </a>
+
+            <div class="pesquisa">
+                <input type="text" id="campoPesquisa"
+                    placeholder="Pesquise por peça, marca ou veículo...">
+
+                <button id="botaoPesquisa">Pesquisar</button>
+            </div>
+
+            <div class="acoes" id="acoesUsuario">
+                <a href="login.html" id="linkMinhaConta">Minha conta</a>
+
+                <a href="carrinho.html" class="carrinho">
+                    Carrinho <span id="quantidadeCarrinho">0</span>
+                </a>
+</div>
+
+        </div>
+
+        <nav class="navegacao">
+            <div class="container menu">
+                <a href="index.html">Início</a>
+                <a href="produtos.html">Todas as peças</a>
+                <a href="produtos.html?categoria=Motor">Motor</a>
+                <a href="produtos.html?categoria=Freios">Freios</a>
+                <a href="produtos.html?categoria=Suspensão">Suspensão</a>
+                <a href="produtos.html?categoria=Elétrica">Elétrica</a>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- BANNER PRINCIPAL -->
+        <section class="banner">
+
+            <div class="container banner-conteudo">
+
+                <div>
+                    <span class="etiqueta">AUTO PARTS</span>
+
+                    <h1>Encontre a peça certa para seu veículo.</h1>
+
+                    <p>
+                        Qualidade, confiança e variedade para manter
+                        seu carro sempre em movimento.
+                    </p>
+
+                    <a href="produtos.html" class="botao-principal">
+                        Explorar produtos
+                    </a>
+                </div>
+
+                <div class="banner-destaque">
+                    <span>QUALIDADE</span>
+                    <strong>QUE MOVE<br>SUA JORNADA.</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CATEGORIAS -->
+        <section class="secao container">
+
+            <div class="titulo-secao">
+                <div>
+                    <span class="subtitulo">NAVEGUE POR CATEGORIA</span>
+                    <h2>O que você procura?</h2>
+                </div>
+            </div>
+
+            <div class="categorias">
+
+                <a href="produtos.html?categoria=Motor" class="categoria">
+                    <span>01</span>
+                    <h3>Motor</h3>
+                    <p>Componentes e acessórios</p>
+                </a>
+
+                <a href="produtos.html?categoria=Freios" class="categoria">
+                    <span>02</span>
+                    <h3>Freios</h3>
+                    <p>Segurança na direção</p>
+                </a>
+
+                <a href="produtos.html?categoria=Suspensão" class="categoria">
+                    <span>03</span>
+                    <h3>Suspensão</h3>
+                    <p>Estabilidade e conforto</p>
+                </a>
+
+                <a href="produtos.html?categoria=Elétrica" class="categoria">
+                    <span>04</span>
+                    <h3>Elétrica</h3>
+                    <p>Componentes elétricos</p>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- PRODUTOS EM DESTAQUE -->
+        <section class="secao secao-produtos">
+
+            <div class="container">
+
+                <div class="titulo-secao">
+                    <div>
+                        <span class="subtitulo">SELEÇÃO AUTOPARTS</span>
+                        <h2>Produtos em destaque</h2>
+                    </div>
+
+                    <a href="produtos.html" class="link-ver-todos">
+                        Ver todos os produtos →
+                    </a>
+                </div>
+
+                <div id="listaDestaques" class="produtos-grid">
+
+                    <p class="carregando">Carregando produtos...</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- DIFERENCIAIS -->
+        <section class="diferenciais">
+
+            <div class="container diferenciais-grid">
+
+                <div>
+                    <strong>01</strong>
+                    <h3>Qualidade</h3>
+                    <p>Produtos selecionados.</p>
+                </div>
+
+                <div>
+                    <strong>02</strong>
+                    <h3>Variedade</h3>
+                    <p>Diversas categorias automotivas.</p>
+                </div>
+
+                <div>
+                    <strong>03</strong>
+                    <h3>Praticidade</h3>
+                    <p>Compre sem sair de casa.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <div class="container rodape-conteudo">
+
+            <div>
+                <a href="index.html" class="logo logo-rodape">
+                    <span class="logo-destaque">AUTO</span>PARTS
+                </a>
+
+                <p>Sua loja de peças automotivas.</p>
+            </div>
+
+            <div>
+                <h3>Institucional</h3>
+                <a href="index.html">Página inicial</a>
+                <a href="produtos.html">Produtos</a>
+            </div>
+
+            <div>
+                <h3>Atendimento</h3>
+                <p>Loja virtual AutoParts</p>
+                <p>Projeto acadêmico</p>
+            </div>
+
+        </div>
+
+        <div class="rodape-final">
+            © 2026 AutoParts - Todos os direitos reservados.
+        </div>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

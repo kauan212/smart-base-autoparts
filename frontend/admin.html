@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo | AutoParts</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container">
+            <a href="index.html" class="logo">AutoParts</a>
+
+            <nav class="menu">
+                <a href="index.html">Voltar à loja</a>
+                <a href="admin.html">Painel administrativo</a>
+                <a href="#" id="botaoSairAdmin">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="secao-pagina">
+            <h1>Painel administrativo</h1>
+            <p>Gerencie os produtos e acompanhe os pedidos da AutoParts.</p>
+        </section>
+
+        <section class="admin-resumo">
+
+            <div class="admin-card">
+                <h3>Produtos</h3>
+                <p>Gerencie o catálogo da loja.</p>
+                <a href="#gerenciarProdutos" class="botao-principal">
+                    Gerenciar produtos
+                </a>
+            </div>
+
+            <div class="admin-card">
+                <h3>Pedidos</h3>
+                <p>Consulte as compras dos clientes.</p>
+                <a href="#gerenciarPedidos" class="botao-principal">
+                    Gerenciar pedidos
+                </a>
+            </div>
+
+        </section>
+
+        <section id="gerenciarProdutos" class="admin-secao">
+
+    <h2>Gerenciamento de produtos</h2>
+
+    <div class="admin-formulario">
+        <h3 id="tituloFormularioProduto">Cadastrar novo produto</h3>
+
+        <form id="formProduto">
+
+            <input type="hidden" id="produtoId">
+
+            <div class="campo-formulario">
+                <label for="nomeProduto">Nome do produto</label>
+                <input type="text" id="nomeProduto" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="categoriaProduto">Categoria</label>
+                <select id="categoriaProduto" required>
+                    <option value="">Selecione</option>
+                    <option value="Motor">Motor</option>
+                    <option value="Freios">Freios</option>
+                    <option value="Suspensão">Suspensão</option>
+                    <option value="Elétrica">Elétrica</option>
+                </select>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="marcaProduto">Marca</label>
+                <input type="text" id="marcaProduto" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="modeloProduto">Modelo / Código</label>
+                <input type="text" id="modeloProduto" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="compatibilidadeProduto">Compatibilidade</label>
+                <input type="text" id="compatibilidadeProduto">
+            </div>
+
+            <div class="campo-formulario">
+                <label for="precoProduto">Preço (R$)</label>
+                <input type="number" id="precoProduto" min="0.01" step="0.01" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="estoqueProduto">Estoque</label>
+                <input type="number" id="estoqueProduto" min="0" step="1" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="imagemProduto">Endereço da imagem</label>
+                <input type="text" id="imagemProduto">
+            </div>
+
+            <div class="campo-formulario">
+                <label for="descricaoProduto">Descrição</label>
+                <textarea id="descricaoProduto" rows="4"></textarea>
+            </div>
+
+            <div class="admin-acoes-formulario">
+                <button type="submit" class="botao-principal" id="botaoSalvarProduto">
+                    Cadastrar produto
+                </button>
+
+                <button type="button" id="botaoCancelarEdicao" class="botao-secundario" hidden>
+                    Cancelar edição
+                </button>
+            </div>
+
+            <p id="mensagemProduto"></p>
+
+        </form>
+    </div>
+
+    <div class="admin-listagem">
+        <h3>Produtos cadastrados</h3>
+
+        <div id="listaAdminProdutos">
+            <p>Carregando produtos...</p>
+        </div>
+    </div>
+
+</section>
+
+        <section id="gerenciarPedidos" class="admin-secao">
+
+    <h2>Gerenciamento de pedidos</h2>
+
+    <!-- RESUMO DOS PEDIDOS -->
+<div class="admin-resumo-pedidos">
+
+    <div class="admin-indicador-pedido">
+        <h3>Total de pedidos</h3>
+        <p id="totalPedidos">0</p>
+    </div>
+
+    <div class="admin-indicador-pedido">
+        <h3>Aguardando pagamento</h3>
+        <p id="pedidosAguardando">0</p>
+    </div>
+
+    <div class="admin-indicador-pedido">
+        <h3>Em preparação</h3>
+        <p id="pedidosPreparacao">0</p>
+    </div>
+
+    <div class="admin-indicador-pedido">
+        <h3>Enviados</h3>
+        <p id="pedidosEnviados">0</p>
+    </div>
+
+    <div class="admin-indicador-pedido">
+        <h3>Entregues</h3>
+        <p id="pedidosEntregues">0</p>
+    </div>
+
+</div>
+
+    <div class="admin-filtros-pedidos">
+
+        <div class="admin-filtro-campo">
+            <label for="filtroStatusPedido">Filtrar por status</label>
+
+            <select id="filtroStatusPedido">
+                <option value="">Todos os pedidos</option>
+                <option value="Aguardando pagamento">Aguardando pagamento</option>
+                <option value="Pagamento aprovado">Pagamento aprovado</option>
+                <option value="Em preparação">Em preparação</option>
+                <option value="Enviado">Enviado</option>
+                <option value="Entregue">Entregue</option>
+                <option value="Cancelado">Cancelado</option>
+            </select>
+        </div>
+
+        <div class="admin-filtro-campo">
+            <label for="buscaPedido">Pesquisar pedido</label>
+
+            <input
+                type="text"
+                id="buscaPedido"
+                placeholder="Nome do cliente ou número do pedido"
+            >
+        </div>
+
+        <div class="admin-filtro-campo">
+            <label for="ordenarPedidos">Ordenar por data</label>
+
+            <select id="ordenarPedidos">
+                <option value="recentes">Mais recentes primeiro</option>
+                <option value="antigos">Mais antigos primeiro</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div id="listaAdminPedidos">
+        Carregando pedidos...
+    </div>
+
+</section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2026 AutoParts - Loja de Peças Automotivas</p>
+            <p>Painel administrativo.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/admin-produtos.js"></script>
+    <script src="js/admin-pedidos.js"></script>
+
+</body>
+</html>

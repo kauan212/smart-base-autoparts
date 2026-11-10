@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Pedidos | AutoParts</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+    <div class="container topo">
+
+        <a href="index.html" class="logo">
+            <span class="logo-destaque">AUTO</span>PARTS
+        </a>
+
+        <div class="acoes" id="acoesUsuario">
+            <a href="login.html">Minha conta</a>
+
+            <a href="carrinho.html" class="carrinho">
+                Carrinho <span id="quantidadeCarrinho">0</span>
+            </a>
+        </div>
+
+    </div>
+
+    <nav class="navegacao">
+        <div class="container menu">
+            <a href="index.html">Início</a>
+            <a href="produtos.html">Todas as peças</a>
+            <a href="meus-pedidos.html">Meus pedidos</a>
+        </div>
+    </nav>
+</header>
+    <main class="container">
+
+        <section class="secao-pagina">
+            <h1>Meus pedidos</h1>
+            <p>Acompanhe suas compras realizadas na AutoParts.</p>
+        </section>
+
+        <section id="listaPedidos" class="lista-pedidos">
+            <p>Carregando seus pedidos...</p>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2026 AutoParts - Loja de Peças Automotivas</p>
+            <p>Projeto acadêmico de comércio eletrônico.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/meus-pedidos.js"></script>
+
+</body>
+</html>

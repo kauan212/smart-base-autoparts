@@ -1,0 +1,128 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TipoUsuario {
+  ADMIN
+  COLABORADOR
+}
+
+enum StatusArtigo {
+  RASCUNHO
+  PUBLICADO
+  ARQUIVADO
+}
+
+model Usuario {
+  id        Int         @id @default(autoincrement())
+  nome      String
+  email     String      @unique
+  senhaHash String
+  tipo      TipoUsuario @default(COLABORADOR)
+  ativo     Boolean     @default(true)
+  artigos   ArtigoConhecimento[]
+  criadoEm  DateTime    @default(now())
+  atualizadoEm DateTime @updatedAt
+
+  @@map("usuarios")
+}
+
+model Categoria {
+  id        Int         @id @default(autoincrement())
+  nome      String      @unique
+  descricao String?
+  artigos   ArtigoConhecimento[]
+  criadoEm  DateTime    @default(now())
+
+  @@map("categorias")
+}
+
+model Produto {
+  id          Int         @id @default(autoincrement())
+  nome        String
+  codigo      String      @unique
+  marca       String?
+  descricao   String?     @db.Text
+  artigos     ArtigoConhecimento[]
+  aplicacoes  AplicacaoVeicular[]
+  criadoEm    DateTime    @default(now())
+
+  @@index([nome])
+  @@map("produtos")
+}
+
+model Veiculo {
+  id          Int         @id @default(autoincrement())
+  fabricante  String
+  modelo      String
+  anoInicio   Int
+  anoFim      Int?
+  motor       String?
+  aplicacoes  AplicacaoVeicular[]
+
+  @@index([fabricante, modelo])
+  @@map("veiculos")
+}
+
+model AplicacaoVeicular {
+  id        Int      @id @default(autoincrement())
+  produtoId Int
+  veiculoId Int
+
+  produto   Produto  @relation(fields: [produtoId], references: [id], onDelete: Cascade)
+  veiculo   Veiculo  @relation(fields: [veiculoId], references: [id], onDelete: Cascade)
+
+  @@unique([produtoId, veiculoId])
+  @@map("aplicacoes_veiculares")
+}
+
+model ArtigoConhecimento {
+  id          Int          @id @default(autoincrement())
+  titulo      String
+  resumo      String?      @db.Text
+  conteudo    String       @db.Text
+  status      StatusArtigo @default(RASCUNHO)
+
+  autorId     Int
+  categoriaId Int
+  produtoId   Int?
+
+  autor       Usuario      @relation(fields: [autorId], references: [id], onDelete: Restrict)
+  categoria   Categoria   @relation(fields: [categoriaId], references: [id], onDelete: Restrict)
+  produto     Produto?    @relation(fields: [produtoId], references: [id], onDelete: SetNull)
+
+  tags        ArtigoTag[]
+
+  criadoEm    DateTime     @default(now())
+  atualizadoEm DateTime    @updatedAt
+
+  @@index([titulo])
+  @@index([categoriaId])
+  @@index([autorId])
+  @@index([status])
+  @@map("artigos_conhecimento")
+}
+
+model Tag {
+  id       Int         @id @default(autoincrement())
+  nome     String      @unique
+  artigos  ArtigoTag[]
+
+  @@map("tags")
+}
+
+model ArtigoTag {
+  artigoId Int
+  tagId    Int
+
+  artigo   ArtigoConhecimento @relation(fields: [artigoId], references: [id], onDelete: Cascade)
+  tag      Tag                @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([artigoId, tagId])
+  @@map("artigos_tags")
+}

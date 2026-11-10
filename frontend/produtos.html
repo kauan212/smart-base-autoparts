@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos | AutoParts</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<header class="cabecalho">
+    <div class="container topo">
+        <a href="index.html" class="logo">
+            <span class="logo-destaque">AUTO</span>PARTS
+        </a>
+
+        <div class="pesquisa">
+            <input type="text" id="campoPesquisa" placeholder="Pesquise por peça, marca ou veículo...">
+            <button id="botaoPesquisa">Pesquisar</button>
+        </div>
+
+        <div class="acoes" id="acoesUsuario">
+            <a href="login.html">Minha conta</a>
+            <a href="carrinho.html" class="carrinho">
+                Carrinho <span id="quantidadeCarrinho">0</span>
+            </a>
+        </div>
+    </div>
+
+    <nav class="navegacao">
+        <div class="container menu">
+            <a href="index.html">Início</a>
+            <a href="produtos.html">Todas as peças</a>
+            <a href="produtos.html?categoria=Motor">Motor</a>
+            <a href="produtos.html?categoria=Freios">Freios</a>
+            <a href="produtos.html?categoria=Suspensão">Suspensão</a>
+            <a href="produtos.html?categoria=Elétrica">Elétrica</a>
+        </div>
+    </nav>
+</header>
+
+<main class="secao container">
+    <div class="titulo-secao">
+        <div>
+            <span class="subtitulo">CATÁLOGO AUTOPARTS</span>
+            <h2>Todas as peças</h2>
+        </div>
+    </div>
+
+    <div class="filtros-produtos">
+        <div>
+            <label for="filtroCategoria">Categoria</label>
+            <select id="filtroCategoria">
+                <option value="">Todas as categorias</option>
+                <option value="Motor">Motor</option>
+                <option value="Freios">Freios</option>
+                <option value="Suspensão">Suspensão</option>
+                <option value="Elétrica">Elétrica</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="filtroOrdenacao">Ordenar por</label>
+            <select id="filtroOrdenacao">
+                <option value="">Padrão</option>
+                <option value="menor-preco">Menor preço</option>
+                <option value="maior-preco">Maior preço</option>
+                <option value="nome">Nome</option>
+            </select>
+        </div>
+    </div>
+
+    <p id="totalProdutos" class="total-produtos"></p>
+
+    <div id="listaProdutos" class="produtos-grid">
+        <p class="carregando">Carregando produtos...</p>
+    </div>
+</main>
+
+<footer class="rodape">
+    <div class="container rodape-conteudo">
+        <div>
+            <a href="index.html" class="logo logo-rodape">
+                <span class="logo-destaque">AUTO</span>PARTS
+            </a>
+            <p>Sua loja de peças automotivas.</p>
+        </div>
+
+        <div>
+            <h3>Institucional</h3>
+            <a href="index.html">Página inicial</a>
+            <a href="produtos.html">Produtos</a>
+        </div>
+
+        <div>
+            <h3>Atendimento</h3>
+            <p>Loja virtual AutoParts</p>
+            <p>Projeto acadêmico</p>
+        </div>
+    </div>
+
+    <div class="rodape-final">
+        © 2026 AutoParts - Todos os direitos reservados.
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/produtos.js"></script>
+
+</body>
+</html>

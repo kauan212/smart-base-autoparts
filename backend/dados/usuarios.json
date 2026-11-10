@@ -1,0 +1,32 @@
+[
+    {
+        "id": "a45b7319-509e-498e-a638-39982f3be7c7",
+        "nome": "Jose Roberto",
+        "cpf": "83597483584",
+        "telefone": "47365375745",
+        "email": "joseroberto@gmail.com",
+        "senha": "$2b$10$x.y9DZmc.fYo81JaWt1Y0.vvIGBMGJIiuPYiQNTvYHQV.wsm/oePC",
+        "tipo": "cliente",
+        "criadoEm": "2026-11-09T02:19:33.243Z"
+    },
+    {
+        "id": "5fdff4e9-999f-4d47-9297-e96d2e56d004",
+        "nome": "Admin AutoParts",
+        "cpf": "",
+        "telefone": "",
+        "email": "admin@autoparts.com",
+        "senha": "$2b$10$MusN7.hezzW1tHo8Rw2Gfe7shRNqP.b.EKLUbr4sayclV8mfAp.gm",
+        "tipo": "admin",
+        "criadoEm": "2026-11-09T02:54:48.180Z"
+    },
+    {
+        "id": "4d038a57-7871-4ab0-9e54-ed52859cf74d",
+        "nome": "Joao Silva",
+        "cpf": "16588564982",
+        "telefone": "4978521368",
+        "email": "joaosilva@gmail.com",
+        "senha": "$2b$10$I1U7IRygHOK84T8rYNtDvuQhFU.teBOlhiF8rxIemQe.orctEkl5K",
+        "tipo": "cliente",
+        "criadoEm": "2026-11-09T23:12:07.842Z"
+    }
+]

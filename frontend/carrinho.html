@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carrinho | AutoParts</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<header class="cabecalho">
+    <div class="container topo">
+        <a href="index.html" class="logo">
+            <span class="logo-destaque">AUTO</span>PARTS
+        </a>
+
+        <div class="acoes" id="acoesUsuario">
+            <a href="login.html">Minha conta</a>
+            <a href="carrinho.html" class="carrinho">
+                Carrinho <span id="quantidadeCarrinho">0</span>
+            </a>
+        </div>
+    </div>
+
+    <nav class="navegacao">
+        <div class="container menu">
+            <a href="index.html">Início</a>
+            <a href="produtos.html">Todas as peças</a>
+            <a href="produtos.html?categoria=Motor">Motor</a>
+            <a href="produtos.html?categoria=Freios">Freios</a>
+            <a href="produtos.html?categoria=Suspensão">Suspensão</a>
+            <a href="produtos.html?categoria=Elétrica">Elétrica</a>
+        </div>
+    </nav>
+</header>
+
+<main class="secao container">
+    <div class="titulo-secao">
+        <div>
+            <span class="subtitulo">SUA COMPRA</span>
+            <h2>Meu carrinho</h2>
+        </div>
+    </div>
+
+    <div class="carrinho-layout">
+
+        <section class="carrinho-lista">
+            <div id="listaCarrinho">
+                <p class="carregando">Carregando carrinho...</p>
+            </div>
+
+            <a href="produtos.html" class="continuar-comprando">
+                ← Continuar comprando
+            </a>
+        </section>
+
+        <aside class="resumo-carrinho">
+            <h3>Resumo do pedido</h3>
+
+            <div class="resumo-linha">
+                <span>Subtotal</span>
+                <strong id="subtotalCarrinho">R$ 0,00</strong>
+            </div>
+
+            <div class="resumo-linha">
+                <span>Frete</span>
+                <strong>A calcular</strong>
+            </div>
+
+            <div class="resumo-total">
+                <span>Total</span>
+                <strong id="totalCarrinho">R$ 0,00</strong>
+            </div>
+
+            <button id="botaoFinalizar" class="botao-finalizar">
+                Finalizar compra
+            </button>
+
+            <p class="aviso-carrinho">
+                O pagamento será simulado neste projeto acadêmico.
+            </p>
+        </aside>
+
+    </div>
+</main>
+
+<footer class="rodape">
+    <div class="container rodape-conteudo">
+        <div>
+            <a href="index.html" class="logo logo-rodape">
+                <span class="logo-destaque">AUTO</span>PARTS
+            </a>
+            <p>Sua loja de peças automotivas.</p>
+        </div>
+
+        <div>
+            <h3>Institucional</h3>
+            <a href="index.html">Página inicial</a>
+            <a href="produtos.html">Produtos</a>
+        </div>
+
+        <div>
+            <h3>Atendimento</h3>
+            <p>Loja virtual AutoParts</p>
+            <p>Projeto acadêmico</p>
+        </div>
+    </div>
+
+    <div class="rodape-final">
+        © 2026 AutoParts - Todos os direitos reservados.
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/carrinho.js"></script>
+
+</body>
+</html>
