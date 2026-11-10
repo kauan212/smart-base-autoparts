@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar artigo | Smart-Base AutoParts</title>
+    <link rel="stylesheet" href="css/smartbase.css">
+    <link rel="stylesheet" href="css/cadastro-artigo.css">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="topo-conteudo">
+            <a href="smart-base.html" class="marca">
+                <span class="marca-simbolo">SB</span>
+                <span>
+                    <strong>SMART-BASE</strong>
+                    <small>AUTOPARTS</small>
+                </span>
+            </a>
+
+            <nav class="navegacao">
+                <a href="smart-base.html">Início</a>
+                <a href="smart-base.html#artigos">Artigos</a>
+                <a href="cadastro-artigo.html" class="ativo">Cadastrar artigo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cadastro-container">
+
+        <div class="cadastro-cabecalho">
+            <span class="etiqueta">GERENCIAMENTO DO CONHECIMENTO</span>
+            <h1>Cadastrar artigo</h1>
+            <p>
+                Registre informações técnicas para ampliar a base
+                de conhecimento automotivo.
+            </p>
+        </div>
+
+        <form id="formArtigo" class="form-artigo">
+
+            <div class="campo">
+                <label for="titulo">Título do artigo *</label>
+                <input
+                    type="text"
+                    id="titulo"
+                    name="titulo"
+                    maxlength="200"
+                    placeholder="Ex.: Como identificar problemas no sistema de freios"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="resumo">Resumo</label>
+                <textarea
+                    id="resumo"
+                    name="resumo"
+                    rows="3"
+                    placeholder="Apresente brevemente o assunto do artigo."
+                ></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="conteudo">Conteúdo técnico *</label>
+                <textarea
+                    id="conteudo"
+                    name="conteudo"
+                    rows="12"
+                    placeholder="Descreva as informações técnicas, procedimentos, diagnóstico e orientações..."
+                    required
+                ></textarea>
+            </div>
+
+            <div class="campos-duplos">
+
+                <div class="campo">
+                    <label for="autorId">Autor *</label>
+                    <select id="autorId" name="autorId" required>
+                        <option value="">Carregando autores...</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="categoriaId">Categoria *</label>
+                    <select id="categoriaId" name="categoriaId" required>
+                        <option value="">Carregando categorias...</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="campo">
+                <label for="produtoId">Produto relacionado</label>
+                <select id="produtoId" name="produtoId">
+                    <option value="">Nenhum produto vinculado</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="tags">Tags</label>
+                <input
+                    type="text"
+                    id="tags"
+                    name="tags"
+                    placeholder="Ex.: manutenção, freios, diagnóstico"
+                >
+                <small>Separe as tags utilizando vírgulas.</small>
+            </div>
+
+            <div id="mensagemCadastro" class="mensagem-cadastro"></div>
+
+            <div class="acoes-formulario">
+                <a href="smart-base.html" class="botao-cancelar">Cancelar</a>
+                <button type="submit" id="btnSalvar">Cadastrar artigo</button>
+            </div>
+
+            <p class="aviso-cadastro">
+                Os artigos cadastrados serão publicados imediatamente.
+            </p>
+
+        </form>
+
+    </main>
+
+    <footer class="rodape">
+        <strong>SMART-BASE AUTOPARTS</strong>
+        <span>Sistema de Gerenciamento e Recuperação de Informações Automotivas</span>
+    </footer>
+
+    <script src="js/cadastro-artigo.js"></script>
+</body>
+</html>

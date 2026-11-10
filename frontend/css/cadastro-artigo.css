@@ -1,0 +1,200 @@
+﻿.cadastro-container {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+    padding: 65px 25px 90px;
+}
+
+.cadastro-cabecalho {
+    margin-bottom: 35px;
+}
+
+.cadastro-cabecalho h1 {
+    margin-top: 12px;
+    font-size: 38px;
+    letter-spacing: -1px;
+}
+
+.cadastro-cabecalho p {
+    margin-top: 10px;
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+.form-artigo {
+    padding: 35px;
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 25px;
+}
+
+.campo label {
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+    width: 100%;
+    padding: 13px 15px;
+    background: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    outline: none;
+    color: var(--texto);
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+    border-color: var(--azul);
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.7;
+}
+
+.campo textarea#conteudo {
+    min-height: 260px;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #71819b;
+}
+
+.campo select {
+    cursor: pointer;
+}
+
+.campo select option {
+    background: var(--superficie);
+    color: var(--texto);
+}
+
+.campo small {
+    color: var(--texto-secundario);
+    font-size: 11px;
+}
+
+.campos-duplos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.mensagem-cadastro {
+    display: none;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.mensagem-cadastro.sucesso {
+    display: block;
+    background: rgba(56, 201, 138, 0.12);
+    border: 1px solid rgba(56, 201, 138, 0.35);
+    color: #65dfa9;
+}
+
+.mensagem-cadastro.erro {
+    display: block;
+    background: rgba(255, 90, 90, 0.10);
+    border: 1px solid rgba(255, 90, 90, 0.35);
+    color: #ff8585;
+}
+
+.acoes-formulario {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.acoes-formulario button,
+.botao-cancelar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.acoes-formulario button {
+    border: none;
+    background: linear-gradient(135deg, var(--azul), var(--roxo));
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.acoes-formulario button:hover:not(:disabled) {
+    opacity: 0.85;
+}
+
+.acoes-formulario button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.botao-cancelar {
+    border: 1px solid var(--borda);
+    background: var(--superficie-clara);
+    color: var(--texto);
+}
+
+.aviso-cadastro {
+    margin-top: 20px;
+    color: var(--texto-secundario);
+    font-size: 11px;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .cadastro-container {
+        padding: 45px 15px 65px;
+    }
+
+    .cadastro-cabecalho h1 {
+        font-size: 30px;
+    }
+
+    .form-artigo {
+        padding: 22px 17px;
+    }
+
+    .campos-duplos {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .acoes-formulario {
+        flex-direction: column-reverse;
+    }
+
+    .acoes-formulario button,
+    .botao-cancelar {
+        width: 100%;
+    }
+
+    .aviso-cadastro {
+        text-align: center;
+    }
+}

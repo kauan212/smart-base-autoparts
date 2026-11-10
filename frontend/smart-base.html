@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart-Base AutoParts - Base de conhecimento automotivo">
+    <title>Smart-Base AutoParts | Conhecimento Automotivo</title>
+    <link rel="stylesheet" href="css/smartbase.css">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="topo-conteudo">
+            <a href="smart-base.html" class="marca">
+                <span class="marca-simbolo">SB</span>
+                <span>
+                    <strong>SMART-BASE</strong>
+                    <small>AUTOPARTS</small>
+                </span>
+            </a>
+
+            <nav class="navegacao">
+                <a href="smart-base.html" class="ativo">Início</a>
+                <a href="#artigos">Artigos</a>
+                <a href="#sobre">Sobre o sistema</a>
+            </nav>
+
+            <span class="status-servidor">
+                <span class="status-ponto"></span>
+                Sistema online
+            </span>
+        </div>
+    </header>
+
+    <main>
+        <section class="apresentacao">
+            <div class="apresentacao-conteudo">
+                <span class="etiqueta">BASE DE CONHECIMENTO AUTOMOTIVO</span>
+
+                <h1>Conhecimento técnico<br>em um só lugar.</h1>
+
+                <p>
+                    Consulte informações, procedimentos de manutenção,
+                    aplicações de peças e conteúdos técnicos automotivos.
+                </p>
+
+                <div class="pesquisa">
+                    <input
+                        type="search"
+                        id="campoBusca"
+                        placeholder="Pesquise por artigo, peça ou assunto..."
+                    >
+                    <button id="btnPesquisar">Pesquisar</button>
+                </div>
+
+                <div class="resumo-pesquisa">
+                    <span id="totalArtigos">Carregando artigos...</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="conteudo-principal" id="artigos">
+            <div class="cabecalho-secao">
+                <div>
+                    <span class="etiqueta">ACERVO TÉCNICO</span>
+                    <h2>Artigos de conhecimento</h2>
+                    <p>Explore os conteúdos disponíveis na base.</p>
+                </div>
+            </div>
+
+            <div id="mensagem" class="mensagem">
+                Carregando artigos...
+            </div>
+
+            <div id="listaArtigos" class="lista-artigos"></div>
+
+            <div class="paginacao">
+                <button id="paginaAnterior" disabled>Anterior</button>
+                <span id="informacaoPagina">Página 1</span>
+                <button id="proximaPagina" disabled>Próxima</button>
+            </div>
+        </section>
+
+        <section class="sobre" id="sobre">
+            <div>
+                <span class="etiqueta">SMART-BASE AUTOPARTS</span>
+                <h2>Informação organizada para facilitar decisões.</h2>
+                <p>
+                    Uma plataforma de gerenciamento e recuperação de
+                    informações automotivas, desenvolvida para centralizar
+                    artigos técnicos, categorias, produtos e aplicações veiculares.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <strong>SMART-BASE AUTOPARTS</strong>
+        <span>Sistema de Gerenciamento e Recuperação de Informações Automotivas</span>
+    </footer>
+
+    <script src="js/smartbase.js"></script>
+</body>
+</html>
