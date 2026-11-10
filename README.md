@@ -6,7 +6,7 @@
 
 O Smart-Base AutoParts é um sistema de gerenciamento e recuperação de informações técnicas automotivas. Seu objetivo é organizar conhecimentos relacionados a produtos, componentes, veículos, aplicações e procedimentos de manutenção.
 
-A aplicação utiliza uma API REST desenvolvida em Node.js e Express, com persistência de dados no PostgreSQL por meio do Prisma ORM.
+A aplicação possui uma API REST desenvolvida em Node.js e Express, com persistência de dados no PostgreSQL por meio do Prisma ORM. Também conta com uma interface web para consulta e cadastro de artigos técnicos.
 
 O projeto foi desenvolvido como trabalho acadêmico da disciplina de Banco de Dados II.
 
@@ -18,16 +18,18 @@ O projeto foi desenvolvido como trabalho acadêmico da disciplina de Banco de Da
 - Prisma ORM 6
 - Docker e Docker Compose
 - JavaScript
+- HTML5 e CSS3
 - Git e GitHub
 
 ## 3. Arquitetura
 
 O projeto utiliza uma arquitetura organizada em camadas:
 
-- **Rotas:** definem os endpoints disponíveis.
+- **Rotas:** definem os endpoints disponíveis na API.
 - **Controladores:** concentram a lógica de processamento das requisições.
-- **Prisma Client:** realiza a comunicação com o banco de dados.
+- **Prisma Client:** realiza a comunicação entre a aplicação e o banco de dados.
 - **PostgreSQL:** armazena as informações da aplicação.
+- **Frontend:** disponibiliza uma interface web para consulta e cadastro de artigos.
 
 ## 4. Modelagem do banco de dados
 
@@ -56,9 +58,11 @@ O banco de dados possui oito entidades principais:
 
 A modelagem utiliza chaves primárias, chaves estrangeiras, restrições de unicidade, índices e relacionamentos explícitos.
 
-## 5. Diferencial técnico — Prisma ORM
+O diagrama entidade-relacionamento está disponível em `docs/DER.md`.
 
-O projeto utiliza o Prisma ORM como abordagem principal de persistência, contemplando recursos avançados:
+## 5. Diferencial técnico — Trilha A: Prisma ORM avançado
+
+O projeto utiliza o Prisma ORM como abordagem principal de persistência, contemplando os seguintes recursos:
 
 - Modelagem de entidades e relacionamentos.
 - Migrações para controle da estrutura do banco.
@@ -68,8 +72,11 @@ O projeto utiliza o Prisma ORM como abordagem principal de persistência, contem
 - Índices para otimização de consultas.
 - Transações para operações relacionadas.
 - Operações `upsert` para criação ou reutilização de tags.
+- Consultas relacionais utilizando `include` e `select`.
 
-As transações são utilizadas tanto na consulta paginada quanto no cadastro de artigos e suas respectivas tags.
+As transações são utilizadas para executar conjuntamente a consulta paginada e a contagem de registros, além de garantir que o cadastro de artigos e suas respectivas tags sejam processados como uma operação transacional.
+
+O cadastro utiliza operações `upsert` para reutilizar tags existentes ou criar novas, evitando duplicações.
 
 ## 6. Estrutura do projeto
 
@@ -78,7 +85,8 @@ smart-base-autoparts/
 │
 ├── backend/
 │   ├── controladores/
-│   │   └── artigoController.js
+│   │   ├── artigoController.js
+│   │   └── artigoOpcoesController.js
 │   │
 │   ├── rotas/
 │   │   └── artigoRotas.js
@@ -98,21 +106,61 @@ smart-base-autoparts/
 │   └── verificar-banco.js
 │
 ├── frontend/
+│   ├── css/
+│   │   ├── cadastro-artigo.css
+│   │   └── smartbase.css
+│   │
+│   ├── js/
+│   │   ├── cadastro-artigo.js
+│   │   └── smartbase.js
+│   │
+│   ├── smart-base.html
+│   └── cadastro-artigo.html
+│
+├── docs/
+│   └── DER.md
+│
 ├── docker-compose.yml
 ├── .gitignore
+├── IA_LOG.md
 └── README.md
 ```
 
-## 7. Requisitos para execução
+## 7. Funcionalidades
+
+### 7.1. Consulta de artigos
+
+A interface principal permite:
+
+- Listar artigos técnicos publicados.
+- Pesquisar artigos por texto.
+- Consultar informações detalhadas.
+- Visualizar categorias, autores, produtos e tags.
+- Navegar pelos resultados utilizando paginação.
+
+### 7.2. Cadastro de artigos
+
+A interface de cadastro permite:
+
+- Informar título, resumo e conteúdo técnico.
+- Selecionar um autor.
+- Selecionar uma categoria.
+- Vincular um produto, quando necessário.
+- Informar tags separadas por vírgulas.
+- Cadastrar o artigo diretamente na base de dados.
+
+Os artigos cadastrados são publicados imediatamente. A interface apresenta mensagens de sucesso ou erro e informa o ID do artigo criado.
+
+## 8. Requisitos para execução
 
 - Node.js 22 ou superior.
 - npm.
 - Docker Desktop.
 - Git.
 
-## 8. Instalação e configuração
+## 9. Instalação e configuração
 
-### 8.1. Clonar o repositório
+### 9.1. Clonar o repositório
 
 ```bash
 git clone https://github.com/kauan212/smart-base-autoparts.git
@@ -124,7 +172,7 @@ Acessar a pasta:
 cd smart-base-autoparts
 ```
 
-### 8.2. Iniciar o PostgreSQL
+### 9.2. Iniciar o PostgreSQL
 
 Na pasta principal:
 
@@ -134,7 +182,7 @@ docker compose up -d
 
 O Docker Compose inicia um container PostgreSQL 16 e utiliza um volume persistente para armazenar os dados.
 
-### 8.3. Configurar o backend
+### 9.3. Configurar o backend
 
 Entrar na pasta:
 
@@ -160,7 +208,7 @@ DATABASE_URL="postgresql://smartbase:smartbase123@localhost:5432/smartbase?schem
 
 Não publicar o arquivo `.env` no GitHub.
 
-### 8.4. Aplicar as migrações
+### 9.4. Aplicar as migrações
 
 Com o PostgreSQL em execução e a variável de ambiente configurada:
 
@@ -170,7 +218,7 @@ npx prisma migrate deploy
 
 Esse comando aplica as migrações existentes no projeto.
 
-### 8.5. Popular o banco de dados
+### 9.5. Popular o banco de dados
 
 Executar:
 
@@ -180,7 +228,7 @@ node seed.js
 
 O script realiza a inserção de dados fictícios para utilização e testes da aplicação.
 
-## 9. Inicialização da API
+### 9.6. Inicializar a aplicação
 
 Na pasta `backend`, executar:
 
@@ -188,25 +236,26 @@ Na pasta `backend`, executar:
 npm run dev
 ```
 
-Ou iniciar em modo de execução:
+Ou:
 
 ```bash
 npm start
 ```
 
-A API estará disponível em:
+A API e a interface web estarão disponíveis por meio do servidor local.
 
-```text
-http://localhost:3000
-```
+## 10. Acesso à aplicação
 
-Endpoint principal:
+Com o servidor em execução, utilizar os seguintes endereços:
 
-```text
-http://localhost:3000/api/artigos
-```
+| Recurso | Endereço |
+|---|---|
+| Página inicial | `http://localhost:3000/smart-base.html` |
+| Cadastro de artigos | `http://localhost:3000/cadastro-artigo.html` |
+| API de artigos | `http://localhost:3000/api/artigos` |
+| Opções para cadastro | `http://localhost:3000/api/artigos/opcoes` |
 
-## 10. Endpoints da API
+## 11. Endpoints da API
 
 ### Listar artigos
 
@@ -233,7 +282,7 @@ GET /api/artigos?pagina=1&limite=5
 ### Pesquisar artigos
 
 ```text
-GET /api/artigos?busca=Filtro%20de%20ar
+GET /api/artigos?busca=Filtro%20de%20oleo
 ```
 
 ### Filtrar por categoria
@@ -262,6 +311,12 @@ Retorna os dados do artigo e seus relacionamentos.
 
 Caso o artigo não seja encontrado ou não esteja publicado, a API retorna HTTP 404.
 
+### Consultar opções de cadastro
+
+**GET** `/api/artigos/opcoes`
+
+Retorna os autores, categorias e produtos disponíveis para preenchimento do formulário de cadastro.
+
 ### Cadastrar artigo
 
 **POST** `/api/artigos`
@@ -288,11 +343,13 @@ O cadastro utiliza transação para registrar o artigo e suas tags.
 
 As tags existentes são reutilizadas e as novas são cadastradas automaticamente.
 
-## 11. Dados fictícios
+Em caso de sucesso, a API retorna HTTP 201 e os dados do artigo cadastrado.
+
+## 12. Dados fictícios
 
 O script de população inicial contempla:
 
-| Registro | Quantidade |
+| Registro | Quantidade inicial |
 |---|---:|
 | Usuários | 5 |
 | Categorias | 10 |
@@ -305,7 +362,7 @@ O script de população inicial contempla:
 
 Os dados são fictícios e destinados à utilização acadêmica e à validação das funcionalidades.
 
-## 12. Verificação do banco de dados
+## 13. Verificação do banco de dados
 
 Para conferir a quantidade de registros armazenados, executar na pasta `backend`:
 
@@ -325,7 +382,7 @@ Para verificar o estado das migrações:
 npx prisma migrate status
 ```
 
-## 13. Controle de versão
+## 14. Controle de versão
 
 O projeto utiliza Git para controle de versão e GitHub para armazenamento remoto do código-fonte.
 
@@ -333,8 +390,14 @@ Repositório:
 
 https://github.com/kauan212/smart-base-autoparts
 
-## 14. Considerações finais
+## 15. Registro de utilização de inteligência artificial
+
+O arquivo `IA_LOG.md` apresenta o registro da utilização de ferramentas de inteligência artificial durante o desenvolvimento, incluindo apoio no planejamento, implementação, documentação e testes.
+
+## 16. Considerações finais
 
 O Smart-Base AutoParts demonstra a aplicação de conceitos de modelagem relacional, integridade referencial, persistência de dados, arquitetura de APIs REST e utilização avançada do Prisma ORM.
 
 A solução foi desenvolvida com foco na organização e recuperação de informações técnicas automotivas, permitindo consultas, filtros, paginação e cadastro de artigos relacionados a produtos, categorias, autores e tags.
+
+O projeto integra banco de dados relacional, operações transacionais, relacionamentos entre entidades e uma interface web para facilitar a utilização da base de conhecimento.
